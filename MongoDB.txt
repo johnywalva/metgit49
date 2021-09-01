@@ -1,0 +1,193 @@
+from 04:45 PM 30-08-2021
+05:16 PM 30-08-2021
+
+>show dbs
+
+to create a new database:
+> use cdac
+== switched to database cdac
+* if database does not exist it will create.
+* if alreay exist it will connect to it.
+
+to see your currently selected database:- 
+>db
+> show dbs
+local 0.000GB
+* we created cdac database but it doesn't show in the list. 
+  You should have atleast one collection in that database.
+
+to see list of collections :-
+>show collections
+
+to drop database:-
+>db.dropDatabase()
+* this is case sensitive i.e. camel case
+* this will drop currently selected database.
+  if you have not selected any database it will drop "test" database.
+
+to create a collection:- 
+
+>db.createCollection("library")
+>show collections
+>show dbs
+
+to drop the collection:-
+>db.library.drop()
+
+to insert a document in the library collection :-
+
+>db.COLLECTION_NAME.insert(document)
+>db.library.insert({title:'MongoDB programming',author:'Sameer',likes:100})
+
+to view the data you have to use the find method:-
+>db.COLLECTION_NAME.find()
+
+>db.library.find()
+
+Observe the _id field (similar to Primary Key)
+
+insert another document :-
+>db.library.insert({title:'MySQL programming',authors:['Jack','Jill'],likes:200})
+
+to view it :-
+
+>db.library.find()
+
+to make it more presentable :-
+>db.library.find().pretty()
+
+we also have a findOne() method:-
+>db.library.findOne()
+
+Update document:-
+
+>db.COLLECTION_NAME.update(SELECTION_CRITERIA, UPDATED_DATA)
+
+Let me update the author name from 'Sameer' to 'Sameer Dehadrai'
+
+db.library.update({author:'Sameer'},{$set:{'Sameer Dehadrai'}})
+
+use the pretty method to vew it:-
+
+>db.library.find().pretty()
+
+
+Delete document:-
+>db.COLLECTION_NAME.remove(DELETION_CRITERIA)
+
+Let us delete a document that has 100 likes:-
+>db.library.remove({likes:100})
+
+>exit
+==to come out from mongodb shell
+
+to stop mongoDB database:-
+press ctrl+C in terminal where the mongod instance is running.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
